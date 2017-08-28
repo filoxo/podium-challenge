@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FetchResponse from './api/FetchResponse';
+import ReviewCard from './component/ReviewCard'
 import './App.css';
 
 class App extends Component {
@@ -9,8 +10,10 @@ class App extends Component {
         <FetchResponse endpoint="http://shakespeare.podium.co/api/reviews">
           {({fetching, data}) => (
             fetching 
-              ? <div>Fetching data...</div> 
-              : <div>Has data: {JSON.stringify(data)}</div>
+              ? <div className="textCenter">Fetching data...</div> 
+              : <main>
+                  { data.map((review) => <ReviewCard key={review.id} {...review}/>) }
+                </main>
           )}
         </FetchResponse> 
       </div>
