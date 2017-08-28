@@ -11,7 +11,11 @@ class App extends Component {
           {({fetching, data}) => (
             fetching 
               ? <div className="textCenter">Fetching data...</div> 
-              : <main>
+              : <main style={{
+              	  margin: '0 auto',
+              	  maxWidth: '400px',
+	                padding: '10px 0'
+	              }}>
                   { data.map((review) => <ReviewCard key={review.id} {...review}/>) }
                 </main>
           )}
