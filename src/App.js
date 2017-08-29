@@ -4,6 +4,7 @@ import {
 	Route,
 	Link
 } from 'react-router-dom'
+import HomeRoute from './routes/HomeRoute'
 import './App.css';
 
 class App extends Component {
@@ -11,11 +12,11 @@ class App extends Component {
     return (
 	    <Router>
 		    <div>
-			    <ul>
-				    <li><Link to="/">Home</Link></li>
-			    </ul>
+			    <nav style={{padding: '8px'}}>
+				    <Link to="/">Home</Link>
+			    </nav>
 			    <hr/>
-			    <Route exact path="/" render={() => <div>Reviews</div>}/>
+			    <Route exact path="/" component={HomeRoute}/>
 			    <Route path="/review/:id" render={() => <div>REVIEW</div>}/>
 		    </div>
 	    </Router>
