@@ -1,5 +1,6 @@
 import React from 'react'
 import FetchResponse from '../api/FetchResponse'
+import ReviewTable from '../component/ReviewTable'
 
 const ReviewRoute = ({ match }) => (
   <FetchResponse
@@ -16,7 +17,7 @@ const ReviewRoute = ({ match }) => (
             padding: '10px 0'
           }}
         >
-          {JSON.stringify(data)}
+	        <ReviewTable {...data}/>
         </div>
       ) : (
         <div className="textCenter">
