@@ -5,6 +5,7 @@ import {
 	Link
 } from 'react-router-dom'
 import HomeRoute from './routes/HomeRoute'
+import ReviewRoute from './routes/ReviewRoute'
 import './App.css';
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
 			    </nav>
 			    <hr/>
 			    <Route exact path="/" component={HomeRoute}/>
-			    <Route path="/review/:id" render={() => <div>REVIEW</div>}/>
+			    <Route path="/review/:id" component={ReviewRoute}/>
 		    </div>
 	    </Router>
     );
