@@ -17,8 +17,10 @@ class App extends Component {
 				    <Link to="/">Home</Link>
 			    </nav>
 			    <hr/>
-			    <Route exact path="/" component={HomeRoute}/>
-			    <Route path="/review/:id" component={ReviewRoute}/>
+			    <main>
+				    <Route exact path="/" component={HomeRoute}/>
+				    <Route path="/review/:id" component={ReviewRoute}/>
+			    </main>
 		    </div>
 	    </Router>
     );
