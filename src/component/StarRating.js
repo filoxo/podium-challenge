@@ -20,6 +20,6 @@ const StarRating = ({rating}) =>
 	      minWidth: '55px',
 		    padding: '10px',
         textShadow: 'rgba(0,0,0,.3) 0 0 2px, rgba(0,0,0,.3) 0 0 5px'
-    }}>{rating}&nbsp;★</span>
+    }}>{rating} ★</span>
 
 export default StarRating
