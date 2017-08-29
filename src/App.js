@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import FetchResponse from './api/FetchResponse';
-import ReviewCard from './component/ReviewCard'
+import {
+	BrowserRouter as Router,
+	Route,
+	Link
+} from 'react-router-dom'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <FetchResponse endpoint="http://shakespeare.podium.co/api/reviews">
-          {({fetching, data}) => (
-            fetching 
-              ? <div className="textCenter">Fetching data...</div> 
-              : <main style={{
-              	  margin: '0 auto',
-              	  maxWidth: '400px',
-	                padding: '10px 0'
-	              }}>
-                  { data.map((review) => <ReviewCard key={review.id} {...review}/>) }
-                </main>
-          )}
-        </FetchResponse> 
-      </div>
+	    <Router>
+		    <div>
+			    <ul>
+				    <li><Link to="/">Home</Link></li>
+			    </ul>
+			    <hr/>
+			    <Route exact path="/" render={() => <div>Reviews</div>}/>
+			    <Route path="/review/:id" render={() => <div>REVIEW</div>}/>
+		    </div>
+	    </Router>
     );
   }
 }
