@@ -28,8 +28,9 @@ it('renders props to elements', () => {
   }
   const wrapper = shallow(<ReviewCard {...review} />)
   expect(wrapper.find('StarRating').length).toEqual(1)
-  expect(wrapper.find('h3').html()).toEqual(`<h3>${review.author}</h3>`)
-  expect(wrapper.find('p').html()).toEqual(
-    `<p>Published: ${review.publish_date}</p>`
+	console.log(wrapper.find('h3').node.props.children)
+  expect(wrapper.find('h3').node.props.children).toEqual(review.author)
+  expect(wrapper.find('p').node.props.children.join('')).toEqual(
+    `Published: ${review.publish_date}`
   )
 })
