@@ -14,10 +14,22 @@ const ReviewCard = ({id, author, rating, publish_date}) =>
 	        flex: '1',
 	        padding: '6px 12px 6px 0'
         }}>
-            <h3>{author}</h3>
-            <p>Published: {new Date(publish_date).toLocaleString()}</p>
+            <h3 style={{margin: '6px 0'}}>{author}</h3>
+            <p style={{margin: '6px 0'}}>Published: {new Date(publish_date).toLocaleString()}</p>
 		        <div className="textRight">
-			        <Link to={`/review/${id}`}>See full review...</Link>
+			        <Link
+				        style={{
+				        	'backgroundColor': '#333',
+					        'borderRadius': '3px',
+					        'color': '#fff',
+					        'display': 'inline-block',
+					        'fontSize': '12px',
+				        	'textDecoration': 'none',
+					        'padding': '3px 6px'
+				        }}
+	              to={`/review/${id}`}>
+				        See full review...
+			        </Link>
 		        </div>
         </div>
     </div>
